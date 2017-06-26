@@ -12,11 +12,14 @@
 	<link href="css/normalize.css" rel="stylesheet" type="text/css">
 	<link href="css/style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/lato.css" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+	<meta name=”viewport” width="device-width">
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/sticky.js"></script>
 	<script src="js/buttons.js"></script>
 	<!-- <script src="js/cart.js"></script> -->
-	<link href="css/responsive.css" rel="stylesheet" type="text/css">
+	<link href="css/responsive.css" rel="stylesheet" type="text/css" media="screen and (max-width:1320px)">
 
 	</head>
 
@@ -51,7 +54,7 @@
 
 		<div id="basketContentWrapper"> 
 				<!-- cart, shows item added to cart -->
-					<h1> Shopping cart </h1>
+					<h1> Your shopping cart </h1>
 					
 					<div id='display-cart'>
 						<ul id="show-cart">
@@ -130,7 +133,7 @@
 <div style="clear: both;"></div>
 
 <div class="newsletter">
-	<span></span> Sign to newsletter: </span>	
+	<span> Sign to newsletter: </span>	
 	<input id="newsletterin" type="text" placeholder=" enter email here" onfocus="this.placeholder=''" onblur="this.placeholder=' enter your email here'">
 	<label for="checkbox1"> <input type="checkbox" name="checkbox" id="checkbox1">I agree with <a href="#">newsletter conditions</a></label>
 </div>
@@ -269,7 +272,7 @@ function displayCart(){
     + " = " +cartArray[i].total
     + " <button class='plus-item' data-name='"+cartArray[i].name+"'>+</button>"
     + "<button class='substract-item' data-name='"+cartArray[i].name+"'>  -  </button>"
-    +"  <button class='delete-item' data-name='"+cartArray[i].name +"'>X</button>"
+    +"<button class='delete-item' data-name='"+cartArray[i].name +"'>X</button>"
     + "</li>"
   }
   $("#show-cart").html(output);

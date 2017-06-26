@@ -5,7 +5,8 @@ body{
 	background-color: #Fcfcfc;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
-	margin: 0 !important;}
+	margin: 0 !important;
+}
 
 a {color: #5E5C58;}
 a:hover {color: #0F1A1E;}
@@ -174,21 +175,62 @@ input[name="q"]:focus {
 
 }
 
-#display-cart{
-	display: inline-block;
-	padding:5px;
-
+#basketContentWrapper h1 {
+	text-transform: uppercase;
+	font-weight: 100;
+	font-size:40px;
+	letter-spacing: 6px;
+	font-family: 'Amatic SC', cursive;
 }
-
-#info-cart {
-	display: inline-block;
-	padding:5px;
-
-}
-
 #basketContentWrapper ul li .item-count{
 	width:60px;
 	color: black;
+}
+
+#basketContentWrapper #display-cart{
+	text-transform: uppercase;
+	font-weight: 100;
+	font-size:20px;
+	letter-spacing: 3px;
+}
+
+#basketContentWrapper #info-cart {
+	text-transform: uppercase;
+	font-weight: 100;
+	font-size:15px;
+	letter-spacing: 2px;
+}
+
+#basketContentWrapper  button {
+	text-transform: uppercase;
+	font-weight: 200;
+	font-size:15px;
+	letter-spacing: 2px;
+	background-color: #Fcfcfc;
+	color: #5E5C58 ;
+	outline: none;
+	border-radius: 3px;
+	cursor:pointer;
+	border: 1px solid #5E5C58;
+}
+
+ button:hover {
+	transform: scale(1.05,1.07);
+    transition-timing-function: ease-out;
+    transition-duration: 250ms;
+    -webkit-transform: scale(1.05,1.07);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 250ms;
+    -moz-transform: scale(1.05,1.07);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 250ms;
+}
+
+.item-count {
+	outline: none;
+	border-radius: 3px;
+	border: 1px solid #5E5C58;
+	width: 40px;
 }
 /*main pic section*/
 header {
@@ -474,6 +516,7 @@ button[class="openform"]:focus {
 #contactform {
 	margin-left: 80px;
 	margin-right: 80px;
+
 }
 #contactform h2{
 	color: #4A4842;

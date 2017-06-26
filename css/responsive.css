@@ -1,0 +1,50 @@
+.bestsel .bestsellers ul li{
+	height: 330px;
+	width: 20%;
+	margin-left: 5%;
+}
+
+.bestsel {height: 320px;}
+.bestsel .bestsellers ul li .img{width: 100%; height: 100%;}
+#info {font-size: 10px;}
+#info .price {font-size: 10px; letter-spacing: 1px;}
+.bestsel h3 {font-size:20px;}
+.newsletter{font-size: 15px;}
+#newsletterin {width: 30%;}
+.newsletter label {font-size: 12px;}
+.img2 {display: none;}
+.RandomContent .img1 {width: 21%; padding: 2%; height: auto;}
+.RandomContent{height: auto;}
+.footer{height:120px;}
+.footer ol li {font-size: 15px;  color: #0F1A1E;}
+.footer h1 { font-weight: 300; }
+#terms, #social {display: none;}
+.footer ol {margin-left: auto; margin-right:auto;}
+
+/*********************************************************************************/
+
+@media screen and (max-width: 985px){
+ #info .price {display: none;}
+ #info {font-size: 15px;}
+.newsletter  {height: 70px;}
+#newsletterin {width: 60%;}
+.newsletter label {float: left; font-size: 15px; }
+.bestsel .bestsellers ul li {width: 40%;}
+.bestsel {min-height:700px;}
+.bestsel .bestsellers ul li .img {height: 50%;}
+header {height: 200px;}
+}
+
+/*********************************************************************************/
+
+@media screen and (max-width: 710px)  {
+.nav .MenuTopNav ol {float:left;}	
+.nav {height: 90px;}
+#searchFormWrapper {top:100px;}
+#basketContentWrapper {top:100px;}
+#help, #terms, #social, #shoppingonline {display: none}
+.newsletter {height:100px;}
+.newsletter span { display: inline-block; }
+#newsletterin {width:80%; margin: 2%; }
+#contactform {}
+}
