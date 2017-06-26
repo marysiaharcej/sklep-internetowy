@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  
+  <title></title>
+  
+  <meta name="description" content="Opis w Google" />
+  <meta name="keywords" content="słowa, kluczowe, wypisane, po, porzecinku" />
+  
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/lato.css" type="text/css" />
+  <script src="js/jquery-3.2.1.min.js"></script>
+<!--   <script src="js/sticky.js"></script>
+  <script src="js/buttons.js"></script>
+  <script src="js/cart.js"></script> -->
+  <link href="css/responsive.css" rel="stylesheet" type="text/css">
+
+  </head>
+
+<body>
+<h1> Shopping Cart </h1>
+
+<div>
+<!-- list of items that you can add to your cart -->
+  <ul>
+  <li><a href="#" class="add-to-cart" data-name="Shoes" data-price="25">Shoes $25</a> </li>
+  <li><a href="#" class="add-to-cart"  data-name="Case" data-price="11">Iphone case $11</a> </li>
+  <li><a href="#" class="add-to-cart"  data-name="Pineapple" data-price="5">Pineapple $5</a> </li>
+  <li><a href="#"  class="add-to-cart"  data-name="Pizza" data-price="5">Pizza $5</a> </li>
+  </ul><br><br>
+  <button id="clear-cart"> Clear Cart</button>
+  <br><br>
+</div>
+
+
+<div>
+<!-- cart, shows item added to cart -->
+<ul id="show-cart">
+<!--  -->
+</ul><br><br>
+<div>Total cart: $<span id="total-cart"></span></div>
+
+</div>
+<script>
+$(".add-to-cart").click(function(event){
+  event.preventDefault(); // canceling default behavior
+  var name = $(this).attr("data-name"); //link na który klikniesz
+  var price = Number($(this).attr("data-price"));
+
+  addItemToCart(name, price, 1) ;
+  displayCart();
+});
+
+$("#clear-cart").click(function(event){
+  clearCart();
+  displayCart();
+
+});
+
+function displayCart(){
+  var cartArray= listCart();
+  var output = "";
+
+  for (var i in cartArray) {
+    output += "<li>" 
+    + cartArray[i].name
+    // dodajemy pole do wprwadzania ilości ręcznie
+    + " <input class='item-count' type = 'number' data-name='"
+    +cartArray[i].name
+    +"' value='"+cartArray[i].count +"'>" 
+    +cartArray[i].count
+    + " x " +cartArray[i].price 
+    + " = " +cartArray[i].total
+    + " <button class='plus-item' data-name='"+cartArray[i].name+"'>+</button>"
+    + " <button class='substract-item' data-name='"+cartArray[i].name+"'>-</button>"
+    +"<button class='delete-item' data-name='"+cartArray[i].name +"'>X</button>"
+    + "</li>"
+  }
+  $("#show-cart").html(output);
+  $("#total-cart").html(totalCart() );
+};
+
+$("#show-cart").on("click", ".delete-item", function(event){
+  var name =$(this).attr("data-name");
+  removeItemFromCartAll(name);
+  displayCart();
+});
+
+$("#show-cart").on("click", ".substract-item", function(event){
+  var name= $(this).attr("data-name");
+  removeItemFromCart(name);
+  displayCart();
+});
+
+$("#show-cart").on("click", ".plus-item",function(event){
+  var name = $(this).attr("data-name");
+  addItemToCart(name, 0, 1); //zero holds the place of count
+  displayCart();
+});
+
+$("#show-cart").on("change", ".item-count", function(event){
+  var name = $(this).attr("data-name");
+  var count = $(this).val();
+  setCountForItem(name, count);
+
+});
+// ***************************************************************
+// SHOPPING CART FUNCTION
+var cart = [];
+
+var Item = function (name, price, count) {
+  this.name= name
+  this.price = price
+  this.count = count
+};
+
+
+function addItemToCart(name, price, count) {
+  for(var i in cart) {
+    if (cart[i].name === name) {
+      cart[i].count += count;
+      saveCart();
+      return;
+      }
+  }
+  var item = new Item(name, price, count);
+  cart.push(item);
+  saveCart();
+ }
+
+function setCountForItem(name, count){
+  for (var i in cart) {
+    if (cart[i].name === name) {
+      cart[i].count = count;
+      break;
+    }
+  }
+  saveCart();
+}
+
+function removeItemFromCart(name){
+ for (var i in cart) {
+  if (cart[i].name === name) {
+      cart[i].count --;
+      if(cart[i].count === 0) {
+        cart.splice(i, 1); //remove this item from cart
+      }
+      break;
+  }
+ }
+ saveCart();
+}
+
+function removeItemFromCartAll(name){
+  for (var i in cart) {
+    if (cart[i].name === name) {
+      cart.splice(i, 1);
+      break;
+    }
+  }
+  saveCart();
+}
+
+function clearCart() {
+  cart=[];
+  saveCart();
+}
+
+
+
+function countCart() { //return total count. How many items i have in the cart
+var totalCount = 0;
+for (var i in cart) {
+ totalCount += cart[i].count;
+}
+return totalCount;
+};
+
+function totalCart() { //total cost of the entire cart
+ var totalCost = 0;
+ for (var i in cart) {
+  totalCost += cart[i].price * cart[i].count;
+ }
+ return totalCost.toFixed(2); //zwraca string zamiast number aby nie zepsuć liczby na jakąś z 10,77777777 czy coś - zaokrągla to do ile miejsc
+};
+
+function listCart() { // kopia koszyka na której możemy działac bez wpływania na koszyk podstawowy
+//aray of all items for which we will create programm to generate html to add to our page
+//helps with debbuging, shows array in console
+  var cartCopy = [];
+  for (var i in cart) {
+    var item = cart[i];
+    var itemCopy = {};
+      for (var p in item) {
+        itemCopy[p] = item[p];
+      }  //loop through every property
+    itemCopy.total = (item.price * item.count).toFixed(2);
+    cartCopy.push(itemCopy);
+  }
+  return cartCopy;
+};
+
+
+function saveCart(){
+  localStorage.setItem("shoppingCart", JSON.stringify(cart));
+    // json converts objects to string
+    //zapisujemy koszyk za każdym razem gdy coś się w nim zmieni
+};
+
+function loadCart(){
+  cart= JSON.parse(localStorage.getItem("shoppingCart"));
+};
+
+
+loadCart();
+displayCart();
+</script>
+
+
+
+</body>
+</html>

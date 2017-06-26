@@ -1,0 +1,28 @@
+{
+  "name": "lato",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "ddecf5ad7935e3fb1b70dac6ed00d06a",
+      "css": "lang",
+      "code": 59392,
+      "src": "entypo"
+    },
+    {
+      "uid": "9725db89b610135dc76cd8a21afffa83",
+      "css": "search",
+      "code": 59393,
+      "src": "linecons"
+    },
+    {
+      "uid": "s51at1xi1fkaomxvp6dqaax5jmyhtn4h",
+      "css": "basket",
+      "code": 59394,
+      "src": "modernpics"
+    }
+  ]
+}

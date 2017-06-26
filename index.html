@@ -1,0 +1,419 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<title></title>
+	
+	<meta name="description" content="Opis w Google" />
+	<meta name="keywords" content="słowa, kluczowe, wypisane, po, porzecinku" />
+	
+	<link href="css/normalize.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/lato.css" type="text/css" />
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/sticky.js"></script>
+	<script src="js/buttons.js"></script>
+	<!-- <script src="js/cart.js"></script> -->
+	<link href="css/responsive.css" rel="stylesheet" type="text/css">
+
+	</head>
+
+<body>
+<div class="nav">
+	<div class="TopMenuDesktop">
+		<ul>
+			<li><a href="#">Logo here</a> </li>
+			<li><a href="#">For her</a> </li>
+			<li><a href="#">For him</a></li>
+			<li><a href="#">Lookbook</a></li>	
+			<li><a href="#">Trends</a></li>
+		</ul>
+	</div>
+	<div class="MenuTopNav">
+		<ol>
+			<li name="card"><button id="basket" type="button" ><i class="icon-basket"></i></button></li>
+
+			<li name="search"><button id="search" type="button"><i class="icon-search"></i></button>
+				<div id="searchFormWrapper">
+					<form>
+						<div class="inputArea"><input type="text" name="q" maxlength="128">
+						<button type="button" id="searchbtn"> > </button>
+						</div>
+					</form>
+				</div>
+			</li>
+
+			<li name="language"><a href="#"><i class="icon-lang"></i></a> </li>
+					
+		</ol>
+
+		<div id="basketContentWrapper"> 
+				<!-- cart, shows item added to cart -->
+					<h1> Shopping cart </h1>
+					
+					<div id='display-cart'>
+						<ul id="show-cart">
+						<!--  -->
+						</ul>
+					</div>
+					
+					<br><br>
+
+					<div id="info-cart">You have <span id="count-cart">x</span> items in your cart<br>
+					Total cart: $<span id="total-cart"></span> <button id="clear-cart"> Clear Cart</button>
+					</div>
+					
+					
+		</div>
+	</div>
+</div>	
+
+<header></header>
+
+<div class="bestsel">
+	<h3>Our bestsellers</h3>
+	<div class="bestsellers">
+		<ul>
+			<li>
+			<div class="img"><a href="#" onMouseOver="document.getElementById('zmiana').src='images/wear2/pine.jpg'" onMouseOut="document.getElementById('zmiana').src='images/wear1/pine.jpg'"><img alt="" id="zmiana" src="images/wear1/pine.jpg" style="width: 100%; height: 100%;"></a>
+			<div id="info">
+			<div class="opis">Pineapple</div>
+			<div id="info1">
+			<div class="price"> $ 5 //</div>
+			<button class="add-to-cart" id="basket" type="button" data-name="pineapple" data-price="5"> add to <i class="icon-basket"></i></button>
+			</div>
+			</div>
+			</div>
+			</li>
+
+			<li>
+			<div class="img"><a href="#" onMouseOver="document.getElementById('zmiana1').src='images/wear2/pizza.jpg'" onMouseOut="document.getElementById('zmiana1').src='images/wear1/pizza.jpg'"><img alt="" id="zmiana1" src="images/wear1/pizza.jpg" style="width: 100%; height: 100%;"></a>
+			<div id="info">
+			<div class="opis">PIZZA</div>
+			<div id="info1">
+			<div class="price"> $ 5 //</div>
+			<button class="add-to-cart" id="basket" type="button" data-name="pizza" data-price="5"> add to <i class="icon-basket"></i></button>
+			</div>
+			</div>
+			</div>
+			</li>
+
+			<li>
+			<div class="img"><a href="#" onMouseOver="document.getElementById('zmiana2').src='images/wear2/white.jpg'" onMouseOut="document.getElementById('zmiana2').src='images/wear1/white.jpg'"><img alt="" id="zmiana2" src="images/wear1/white.jpg" style="width: 100%; height: 100%;"></a>
+			<div id="info">
+			<div class="opis">white shoes</div>
+			<div id="info1">
+			<div class="price"> $ 25 //</div>
+			<button class="add-to-cart" id="basket" type="button" data-name="white shoes" data-price="25"> add to <i class="icon-basket"></i></button>
+			</div>
+			</div>
+			</div>
+			</li>
+
+			<li>
+			<div class="img"><a href="#" onMouseOver="document.getElementById('zmiana3').src='images/wear2/phone.jpg'" onMouseOut="document.getElementById('zmiana3').src='images/wear1/phone.jpg'" ><img alt="" id="zmiana3" src="images/wear1/phone.jpg" style="width: 100%; height: 100%;"></a>
+			<div id="info">
+			<div class="opis">iphone case</div>
+			<div id="info1">
+			<div class="price"> $ 11 //</div>
+			<button class="add-to-cart" id="basket" type="button" data-name="iphone case" data-price="11"> add to <i class="icon-basket"></i></button>
+			</div>
+			</div>
+			</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div style="clear: both;"></div>
+
+<div class="newsletter">
+	<span></span> Sign to newsletter: </span>	
+	<input id="newsletterin" type="text" placeholder=" enter email here" onfocus="this.placeholder=''" onblur="this.placeholder=' enter your email here'">
+	<label for="checkbox1"> <input type="checkbox" name="checkbox" id="checkbox1">I agree with <a href="#">newsletter conditions</a></label>
+</div>
+
+<div class="RandomContent">
+	<div class="img1">
+	<a href="#"><img alt="" src="images/random/part1.png" style="width: 100%; height: 100%; opacity:0.8;"> </a>	
+	</div>
+
+	<div class="img1">
+	<a href="#"><img alt="" src="images/random/part2.jpg" style="width: 100%; height: 100%; opacity:0.8;"></a>		
+	</div>
+
+	<div class="img2">
+		
+	</div>
+
+	<div class="img1">
+	<a href="#"><img alt="" src="images/random/part3.png" style="width: 100%; height: 100%; opacity:0.8;"> </a>		
+	</div>
+	
+	<div class="img1">	
+	<a href="#"><img alt="" src="images/random/part4.jpg" style="width: 100%; height: 100%; opacity:0.8;"> </a>	
+	</div>
+</div>
+<div style="clear: both;"></div>
+<div class="footer">
+	<div id="help">
+	<h1>Help</h1>
+	<ol>
+		<li>size guide</li>
+		<li>How to buy</li>
+		<li>FAQ</li>
+		<li>Claims</li>
+	<ol>
+	</div>
+
+	<div id="shoppingonline">
+	<h1>Shopping on-line</h1>
+	<ol>
+		<li>payments</li>
+		<li>shipping</li>
+		<li>returns / exchanges</li>
+	</div>
+
+
+	<div id="terms">
+	<h1>Terms and Privacy Policy</h1>
+	<ol>
+		<li>Terms</li>
+		<li>Privacy Policy -cookies</li>
+		<li>gift cards</li>
+		<li>returns in stores</li>
+	</div>
+
+	<div  id="contactform">
+	<h2> helpline: <span id="nr">123 456 789</span> </h2>
+	<p> or </p>
+	<button class="openform" type="button" >use <span id="nr">contact form</span></button>
+	</div>
+
+
+	<div id="social">
+	<h1>Find us on </h1>
+
+		<ol>
+		<li>facebook</li>
+		<li>twitter</li>
+		<li>instagram</li>
+		<li>youtube</li>
+		</ol>
+	</div>
+
+</div>
+<div class="openContactForm">
+<h1>Let us help you</h1>  <button class="closeform" type="button"> X </button>
+<label for="firstname"> First name*</label> <input type="text" placeholder=" enter your first name here" onfocus="this.placeholder=''" onblur="this.placeholder=' enter your first name here'"> 
+
+<label for="lastname"> Last name* </label> <input  type="text" placeholder=" enter your last name here" onfocus="this.placeholder=''" onblur="this.placeholder=' enter your last name here'">
+
+<label for="email"> Email* </label> <input  type="text" placeholder=" enter your email here" onfocus="this.placeholder=''" onblur="this.placeholder=' enter your email here'">
+
+<label for="select1"> Select department* </label> 
+<select id="select1" type="text" >
+<option > Select department </option>
+<option> Eshop </option>
+<option> Stores - customer service </option>
+</select>
+<div style="clear:both;"></div>
+<label for="select2"> Select topic* </label> 
+<select id="select2" type="text" >
+<option > Select topic </option>
+<option> information on products </option>
+<option> Shopping assistance </option>
+<option> Orders </option>
+<option> Claims and returns </option>
+<option> The website </option>
+</select>
+<div style="clear: both;"></div>
+<label for="message"> Message* </label> <textarea id="message" type="text" placeholder=" enter your message here" onfocus="this.placeholder=''" onblur="this.placeholder=' enter your message here'"></textarea> 
+<div style="clear: both;"></div>
+<input class="send" type="submit" value="send">
+</div>
+
+<script>
+
+
+$(".add-to-cart").click(function(event){
+  event.preventDefault(); // canceling default behavior
+  var name = $(this).attr("data-name"); //link na który klikniesz
+  var price = Number($(this).attr("data-price"));
+
+  ShoppingCart.addItemToCart(name, price, 1) ;
+  displayCart();
+});
+
+$("#clear-cart").click(function(event){
+  ShoppingCart.clearCart();
+  displayCart();
+
+});
+
+function displayCart(){
+  var cartArray= ShoppingCart.listCart();
+  var output = "";
+
+  for (var i in cartArray) {
+    output += "<li>" 
+    + cartArray[i].name
+    // dodajemy pole do wprwadzania ilości ręcznie
+    + " <input class='item-count' type = 'number' data-name='"
+    +cartArray[i].name
+    +"' value='"+cartArray[i].count +"'>" 
+    // +cartArray[i].count
+    + " x " +cartArray[i].price 
+    + " = " +cartArray[i].total
+    + " <button class='plus-item' data-name='"+cartArray[i].name+"'>+</button>"
+    + "<button class='substract-item' data-name='"+cartArray[i].name+"'>  -  </button>"
+    +"  <button class='delete-item' data-name='"+cartArray[i].name +"'>X</button>"
+    + "</li>"
+  }
+  $("#show-cart").html(output);
+  $("#count-cart").html(ShoppingCart.countCart());
+  $("#total-cart").html(ShoppingCart.totalCart() );
+};
+
+$("#show-cart").on("click", ".delete-item", function(event){
+  var name =$(this).attr("data-name");
+  ShoppingCart.removeItemFromCartAll(name);
+  displayCart();
+});
+
+$("#show-cart").on("click", ".substract-item", function(event){
+  var name= $(this).attr("data-name");
+  ShoppingCart.removeItemFromCart(name);
+  displayCart();
+});
+
+$("#show-cart").on("click", ".plus-item",function(event){
+  var name = $(this).attr("data-name");
+  ShoppingCart.addItemToCart(name, 0, 1); //zero holds the place of count
+  displayCart();
+});
+
+$("#show-cart").on("change", ".item-count", function(event){
+  var name = $(this).attr("data-name");
+  var count = Number($(this).val());
+  ShoppingCart.setCountForItem(name, count);
+  displayCart();
+
+});
+// ***************************************************************
+// SHOPPING CART FUNCTION
+var ShoppingCart = {};
+ShoppingCart.cart = [];
+
+ShoppingCart.Item = function (name, price, count) {
+  this.name= name
+  this.price = price
+  this.count = count
+};
+
+
+ShoppingCart.addItemToCart = function(name, price, count) {
+  for(var i in this.cart) {
+    if (this.cart[i].name === name) {
+      this.cart[i].count += count;
+      this.saveCart();
+      return;
+      }
+  }
+  var item = new this.Item(name, price, count);
+  this.cart.push(item);
+  this.saveCart();
+ }
+
+ShoppingCart.setCountForItem = function(name, count){
+  for (var i in this.cart) {
+    if (this.cart[i].name === name) {
+      this.cart[i].count = count;
+      break;
+    }
+  }
+  this.saveCart();
+}
+
+ShoppingCart.removeItemFromCart = function(name){
+ for (var i in this.cart) {
+  if (this.cart[i].name === name) {
+      this.cart[i].count --;
+      if(this.cart[i].count === 0) {
+        this.cart.splice(i, 1); //remove this item from cart
+      }
+      break;
+  }
+ }
+ this.saveCart();
+}
+
+ShoppingCart.removeItemFromCartAll = function(name){
+  for (var i in this.cart) {
+    if (this.cart[i].name === name) {
+      this.cart.splice(i, 1);
+      break;
+    }
+  }
+  this.saveCart();
+}
+
+ShoppingCart.clearCart = function() {
+  this.cart=[];
+  this.saveCart();
+}
+
+ShoppingCart.countCart = function() { //return total count. How many items i have in the cart
+var totalCount = 0;
+for (var i in this.cart) {
+ totalCount += this.cart[i].count;
+}
+return totalCount;
+};
+
+ShoppingCart.totalCart = function() { //total cost of the entire cart
+ var totalCost = 0;
+ for (var i in this.cart) {
+  totalCost += this.cart[i].price * this.cart[i].count;
+ }
+ return totalCost.toFixed(2); //zwraca string zamiast number aby nie zepsuć liczby na jakąś z 10,77777777 czy coś - zaokrągla to do ile miejsc
+};
+
+ShoppingCart.listCart = function() { // kopia koszyka na której możemy działac bez wpływania na koszyk podstawowy
+//aray of all items for which we will create programm to generate html to add to our page
+//helps with debbuging, shows array in console
+  var cartCopy = [];
+  for (var i in this.cart) {
+    var item = this.cart[i];
+    var itemCopy = {};
+      for (var p in item) {
+        itemCopy[p] = item[p];
+      }  //loop through every property
+    itemCopy.total = (item.price * item.count).toFixed(2);
+    cartCopy.push(itemCopy);
+  }
+  return cartCopy;
+};
+
+
+ShoppingCart.saveCart = function(){
+  localStorage.setItem("shoppingCart", JSON.stringify(this.cart));
+    // json converts objects to string
+    //zapisujemy koszyk za każdym razem gdy coś się w nim zmieni
+};
+
+ShoppingCart.loadCart =function(){
+  this.cart= JSON.parse(localStorage.getItem("shoppingCart"));
+};
+
+
+ShoppingCart.loadCart();
+displayCart();
+</script>
+
+
+
+</body>
+</html>
