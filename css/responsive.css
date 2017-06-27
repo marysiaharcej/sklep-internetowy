@@ -3,7 +3,7 @@
 	width: 20%;
 	margin-left: 5%;
 }
-
+header {height:250px;}
 .bestsel {height: 320px;}
 .bestsel .bestsellers ul li .img{width: 100%; height: 100%;}
 #info {font-size: 10px;}
@@ -15,12 +15,11 @@
 .img2 {display: none;}
 .RandomContent .img1 {width: 21%; padding: 2%; height: auto;}
 .RandomContent{height: auto;}
-.footer{height:120px;}
+.footer{height:230px;}
 .footer ol li {font-size: 15px;  color: #0F1A1E;}
 .footer h1 { font-weight: 300; }
-#terms, #social {display: none;}
 .footer ol {margin-left: auto; margin-right:auto;}
-
+.footer #social {display: none;}
 /*********************************************************************************/
 
 @media screen and (max-width: 985px){
@@ -30,9 +29,10 @@
 #newsletterin {width: 60%;}
 .newsletter label {float: left; font-size: 15px; }
 .bestsel .bestsellers ul li {width: 40%;}
-.bestsel {min-height:700px;}
+.bestsel {min-height:750px;}
 .bestsel .bestsellers ul li .img {height: 50%;}
 header {height: 200px;}
+
 }
 
 /*********************************************************************************/
@@ -44,7 +44,10 @@ header {height: 200px;}
 #basketContentWrapper {top:100px;}
 #help, #terms, #social, #shoppingonline {display: none}
 .newsletter {height:100px;}
-.newsletter span { display: inline-block; }
+.newsletter span { display: inline-block; font-weight: 300; text-align:center;}
 #newsletterin {width:80%; margin: 2%; }
 #contactform {}
+.footer{height:130px;}
+.bestsel .bestsellers ul li {height: 250px;}
+.bestsel {min-height:600px;}
 }
